@@ -1,0 +1,173 @@
+/* =============== GOOGLE FONTS =============== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* =============== RESET =============== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* =============== BASE LAYOUT =============== */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+/* =============== CALCULATOR STYLES =============== */
+.calculator {
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 360px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+.calculator:hover {
+  transform: scale(1.02);
+}
+
+.calculator-screen {
+  margin-bottom: 1rem;
+}
+.calculator-display {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.calculator-keys button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.calculator-keys button:hover {
+  background: #e0f7ff;
+}
+.calculator-keys button:active {
+  transform: translateY(2px);
+}
+
+button.operator {
+  background: #81d4fa;
+}
+button.equal-sign {
+  background: #039be5;
+  color: #fff;
+}
+button.zero {
+  grid-column: span 2;
+}
+button.all-clear {
+  background: #e57373;
+  color: #fff;
+}
+
+/* =============== FOOTER =============== */
+.footer {
+  margin-top: auto;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.footer__author {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.footer__social a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+.footer__social a:hover {
+  color: #e0f7ff;
+}
+
+/* =============== RESPONSIVE MEDIA QUERIES =============== */
+/* Smartphone Portrait */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 1rem;
+  }
+  .calculator-display {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+  .calculator-keys button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  .footer {
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .calculator {
+    max-width: 320px;
+  }
+  .calculator-display {
+    font-size: 1.75rem;
+  }
+  .calculator-keys button {
+    font-size: 1.1rem;
+  }
+  .footer {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
+
+/* Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calculator {
+    max-width: 360px;
+  }
+  .calculator-display {
+    font-size: 2rem;
+  }
+  .calculator-keys button {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .calculator {
+    max-width: 400px;
+  }
+}
